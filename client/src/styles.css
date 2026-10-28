@@ -1,0 +1,66 @@
+:root {
+  --pine: #12332e;
+  --accent: #1f6f5c;
+  --ink: #1b2a2f;
+  --paper: #edf0f2;
+  --line: #d8dee2;
+  --amber: #b7791f;
+  --danger: #b3402f;
+}
+body { font-family: 'Figtree', system-ui, sans-serif; background: var(--paper); color: var(--ink); }
+.btn-primary {
+  --bs-btn-bg: var(--accent); --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-bg: #185a4b; --bs-btn-hover-border-color: #185a4b;
+  --bs-btn-active-bg: #144d40; --bs-btn-active-border-color: #144d40;
+  --bs-btn-disabled-bg: var(--accent); --bs-btn-disabled-border-color: var(--accent);
+}
+.btn-link { color: var(--accent); }
+.form-control:focus, .form-select:focus { border-color: var(--accent); box-shadow: 0 0 0 .2rem rgba(31, 111, 92, .2); }
+a:focus-visible, button:focus-visible { outline: 3px solid rgba(31, 111, 92, .5); outline-offset: 2px; }
+
+.shell { display: flex; min-height: 100vh; }
+.side { width: 248px; flex-shrink: 0; background: var(--pine); color: #fff; padding: 28px 20px; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; }
+.brand { font-size: 1.6rem; font-weight: 800; letter-spacing: -.02em; margin-bottom: 32px; }
+.side nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.side-link { color: rgba(255, 255, 255, .78); text-decoration: none; padding: 9px 12px; border-radius: 6px; font-weight: 500; }
+.side-link:hover { color: #fff; background: rgba(255, 255, 255, .08); }
+.side-link.active { color: #fff; background: var(--accent); }
+.side-user { border-top: 1px solid rgba(255, 255, 255, .18); padding-top: 16px; }
+.main { flex: 1; padding: 36px 40px; min-width: 0; }
+.page-title { font-size: 1.9rem; font-weight: 700; letter-spacing: -.02em; margin-bottom: 24px; }
+
+.panel { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
+.panel.p-0 { padding: 0; overflow: hidden; }
+.table > :not(caption) > * > * { padding: .8rem 1rem; }
+.table thead th { font-weight: 600; font-size: .85rem; color: #5b6b70; background: #f7f9fa; border-bottom: 1px solid var(--line); }
+
+.figures { display: flex; flex-wrap: wrap; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
+.figure { flex: 1 1 180px; padding: 22px 26px; border-right: 1px solid var(--line); }
+.figure:last-child { border-right: 0; }
+.figure-value { font-size: 2.2rem; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; color: var(--accent); }
+.figure-label { color: #5b6b70; margin-top: 4px; }
+
+.note { background: #fff; border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 12px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.status { padding: 3px 10px; border-radius: 99px; font-size: .8rem; font-weight: 600; text-transform: capitalize; }
+.status-pending { background: #fbefd5; color: var(--amber); }
+.status-approved { background: #dcf1e8; color: var(--accent); }
+.status-rejected { background: #f7dcd7; color: var(--danger); }
+
+.login { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 100vh; }
+.login-hero { background: var(--pine); color: #fff; padding: 64px; display: flex; flex-direction: column; justify-content: flex-end; }
+.login-hero h1 { font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 800; letter-spacing: -.045em; line-height: .95; margin-bottom: 20px; }
+.login-hero p { max-width: 34ch; font-size: 1.15rem; opacity: .85; }
+.login-form { display: flex; align-items: center; padding: 40px 24px; background: #fff; }
+.login-form form { width: 100%; }
+
+@media (max-width: 860px) {
+  .shell { flex-direction: column; }
+  .side { width: 100%; height: auto; position: static; padding: 16px; }
+  .brand { margin-bottom: 12px; }
+  .side nav { flex-direction: row; flex-wrap: wrap; margin-bottom: 12px; }
+  .main { padding: 24px 16px; }
+  .login { grid-template-columns: 1fr; }
+  .login-hero { padding: 36px 24px; min-height: 240px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
